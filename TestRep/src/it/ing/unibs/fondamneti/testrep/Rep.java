@@ -4,6 +4,7 @@ public class Rep
 {
 	
 	private int x;
+	private int y;
 		
 	public int getX() {
 		return x;
@@ -12,8 +13,16 @@ public class Rep
 	public void setX(int x) {
 		this.x = x;
 	}
+	
 
 
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
 
 	public static void main(String[] args) 
 	{
