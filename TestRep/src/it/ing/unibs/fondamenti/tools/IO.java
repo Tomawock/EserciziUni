@@ -41,7 +41,7 @@ public class IO
 			System.out.println(s);
 		}
 
-		public static void main()
+		public static void main(String[] args)
 		{
 			IO i=new IO();
 			i.outScreen(i.inKeyBoard(true));
