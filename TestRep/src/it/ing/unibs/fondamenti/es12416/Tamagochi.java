@@ -45,7 +45,7 @@ public class Tamagochi
 	
 	public boolean isMorto()
 	{
-		if ((sazieta<=MIN_VITA || sazieta >=MAX_VITA)&& soddisfazione==MIN_VITA)
+		if (sazieta<=MIN_VITA || sazieta >=MAX_VITA|| soddisfazione<=MIN_VITA)
 		{
 			return true;
 		}
@@ -57,7 +57,7 @@ public class Tamagochi
 	
 	public boolean isInfelice()
 	{
-		if ((sazieta<SOGLIA_SAZ || sazieta>MAX_SAZ)&&soddisfazione<SOGLIA_SODD)
+		if (sazieta<SOGLIA_SAZ || sazieta>MAX_SAZ || soddisfazione<SOGLIA_SODD)
 		{
 			return true;
 		}

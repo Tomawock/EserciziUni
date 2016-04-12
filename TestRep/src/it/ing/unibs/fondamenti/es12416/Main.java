@@ -39,7 +39,7 @@ public class Main
 				tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
 			IO.out(tam.toString());
-		}while(!tam.isMorto()||par.equalsIgnoreCase("3"));
+		}while(!tam.isMorto()&&!par.equalsIgnoreCase("3"));
 		
 		if(tam.isMorto())
 		{
