@@ -11,7 +11,7 @@ public class IO
 		 * @param b se falso chiude l'input altrimenti legge i dati
 		 * @return str String di output letta da tstiera
 		 */
-		public String inKeyBoard(boolean b)
+		public static String inKeyBoard(boolean b)
 		{
 			 InputStreamReader reader = new InputStreamReader (System.in);
 	         BufferedReader myInput = new BufferedReader (reader);
@@ -36,15 +36,15 @@ public class IO
 		/**
 		 * Funzione che tampa a video i dati
 		 */
-		public void outScreen(Object s)
+		public static void out(Object s)
 		{
 			System.out.println(s);
 		}
 
 		public static void main(String[] args)
 		{
-			IO i=new IO();
-			i.outScreen(i.inKeyBoard(true));
+			
+			IO.out(IO.inKeyBoard(true));
 		}
 
 }
