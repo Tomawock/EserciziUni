@@ -1,5 +1,7 @@
 package it.ing.unibs.fondamenti.es12416;
 
+import it.ing.unibs.fondamenti.tools.IO;
+
 public class Tamagochi 
 {
 	//Costanti
@@ -14,7 +16,7 @@ public class Tamagochi
 	//ttributi
 	private String nome;					//nome tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
-	private int sazieta=MAX_VITA/2; 		//grado di sazietas
+	private int sazieta=MAX_VITA; 		//grado di sazietas
 	//Costruttori
 	public Tamagochi()
 	{
@@ -39,13 +41,13 @@ public class Tamagochi
 	public void daiBiscotto(int biscotto)
 	{
 		//aumenta del 10% il valore di sazietà e diminuisce la soddisfazione di 1/4
-		sazieta+=(100*(PERCENTUALE_BISC*biscotto))/100;
+		sazieta+=((100*(PERCENTUALE_BISC*biscotto))/100);
 		soddisfazione-=(biscotto/SOD_BISC);
 	}
 	
 	public boolean isMorto()
 	{
-		if (sazieta<=MIN_VITA || sazieta >=MAX_VITA|| soddisfazione<=MIN_VITA)
+		if (sazieta<=MIN_VITA || sazieta >=MAX_VITA || soddisfazione<=MIN_VITA)
 		{
 			return true;
 		}
@@ -88,5 +90,11 @@ public class Tamagochi
 	public double getSazieta() 
 	{
 		return sazieta;
+	}
+	public static void main(String[] args)
+	{
+		Tamagochi t= new Tamagochi();
+		t.daiBiscotto(10);
+		IO.out(t.getSazieta());
 	}
 }
