@@ -1,4 +1,4 @@
-package it.inge.unibs.fondamenti.es15316;
+package it.ing.unibs.fondamenti.es15316;
 
 import static org.junit.Assert.*;
 
