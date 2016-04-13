@@ -36,12 +36,16 @@ public class Tamagochi
 		//aumenta grado di soddisfazione e diminusce della meta la sazieta
 		soddisfazione+=carezze;
 		sazieta-=(carezze/SAZ_CAREZZE);
+		if(soddisfazione>100)
+		{
+			soddisfazione=100;
+		}
 	}
 	
 	public void daiBiscotto(int biscotto)
 	{
 		//aumenta del 10% il valore di sazietà e diminuisce la soddisfazione di 1/4
-		sazieta+=((100*(PERCENTUALE_BISC*biscotto))/100);
+		sazieta+=(sazieta*(PERCENTUALE_BISC*biscotto))/100;
 		soddisfazione-=(biscotto/SOD_BISC);
 	}
 	
@@ -94,7 +98,7 @@ public class Tamagochi
 	public static void main(String[] args)
 	{
 		Tamagochi t= new Tamagochi();
-		t.daiBiscotto(10);
+		t.daiBiscotto(1);
 		IO.out(t.getSazieta());
 	}
 }
