@@ -42,7 +42,7 @@ public class Tamagochi
 	//Funzioni
 	/**Da delle carezze al tamagochi,riduce la sazietà aumenta soddisfazione
 	 * 
-	 * @param quantità di carezze date al tamagochi
+	 * @param carezze,quantità di carezze date al tamagochi
 	 */
 	public void daiCarezza(int carezze)
 	{
@@ -57,13 +57,13 @@ public class Tamagochi
 	
 	/**Da dei biscotti al tamagochi,riduce la soddisfazone aumenta la sazietà
 	 * 
-	 * @param quantita di biscotti ingeriti
+	 * @param biscotti,quantita di biscotti ingeriti
 	 */
-	public void daiBiscotto(int biscotto)
+	public void daiBiscotti(int biscotti)
 	{
 		//aumenta del 10% il valore di sazietà e diminuisce la soddisfazione di 1/4
-		sazieta+=(sazieta*(PERCENTUALE_BISC*biscotto))/100;
-		soddisfazione-=(biscotto/SOD_BISC);
+		sazieta+=(sazieta*(PERCENTUALE_BISC*biscotti))/100;
+		soddisfazione-=(biscotti/SOD_BISC);
 	}
 	
 	/**Controlla lo stato del tamagchi e dice se è vivo o meno
@@ -138,7 +138,7 @@ public class Tamagochi
 	public static void main(String[] args)
 	{
 		Tamagochi t= new Tamagochi();
-		t.daiBiscotto(1);
+		t.daiBiscotti(1);
 		IO.out(t.getSazieta());
 	}
 }

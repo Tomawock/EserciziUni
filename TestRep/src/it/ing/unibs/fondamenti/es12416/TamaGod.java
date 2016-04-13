@@ -4,7 +4,7 @@ import it.ing.unibs.fondamenti.tools.*;
 
 public class TamaGod 
 {
-	private final static String CASE_BISCOTTO="5";
+	private final static String CASE_BISCOTTO="1";
 	private final static String CASE_CAREZZA="2";
 	private final static String CASE_EXIT="3";
 	private final static String ERROR="DATI DI ERRATI";
@@ -19,7 +19,7 @@ public class TamaGod
 	/**
 	 * Ciclo di vita del tamagochi, insermento dati con la scelta da tstiera e output dello status della felicita e controlla se è morto
 	 * 
-	 * @param Oggetto di tipo Tamagochi usare funzione CreaTamag
+	 * @param tam Oggetto di tipo Tamagochi usare funzione CreaTamag
 	 */
 	public static void cicloVitaTamagochi(Tamagochi tam)
 	{
@@ -42,7 +42,7 @@ public class TamaGod
 			
 			if(par.equalsIgnoreCase(CASE_BISCOTTO))
 			{
-				tam.daiBiscotto(myMath.randInt(RANGE_MIN,RANGE_MAX));
+				tam.daiBiscotti(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
 			if(par.equalsIgnoreCase(CASE_CAREZZA))
 			{
