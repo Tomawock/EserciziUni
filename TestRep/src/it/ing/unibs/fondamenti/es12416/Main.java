@@ -4,6 +4,6 @@ public class Main
 {
 	public static void main (String[] args)
 	{
-		TamaGod.vitaTamagochi(TamaGod.creaTam());
+		TamaGod.cicloVitaTamagochi(TamaGod.creaTam());
 	}
 }

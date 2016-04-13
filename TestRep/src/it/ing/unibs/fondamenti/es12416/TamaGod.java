@@ -4,11 +4,11 @@ import it.ing.unibs.fondamenti.tools.*;
 
 public class TamaGod 
 {
-	private final static String CASE_BISCOTTO="1";
+	private final static String CASE_BISCOTTO="5";
 	private final static String CASE_CAREZZA="2";
 	private final static String CASE_EXIT="3";
-	//private final static String ERROR="DATI DI ERRATI";
-	private final static String INS="Inserire nome,soddisfazione e sazietà staccati dal carattere '-'\n";
+	private final static String ERROR="DATI DI ERRATI";
+	private final static String INS="BENVENUTO\nInserire nome,soddisfazione e sazietà staccati dal carattere '-'\n";
 	private final static String EXIT="SEI USCITO";
 	private final static String MORTO=" è MORTO_";
 	private final static String INFELICE=" è TRISTE :[";
@@ -16,7 +16,12 @@ public class TamaGod
 	private final static int RANGE_MIN=1;
 	private final static int RANGE_MAX=10;
 	
-	public static void vitaTamagochi(Tamagochi tam)
+	/**
+	 * Ciclo di vita del tamagochi, insermento dati con la scelta da tstiera e output dello status della felicita e controlla se è morto
+	 * 
+	 * @param Oggetto di tipo Tamagochi usare funzione CreaTamag
+	 */
+	public static void cicloVitaTamagochi(Tamagochi tam)
 	{
 		String par="";
 		do
@@ -43,8 +48,12 @@ public class TamaGod
 			{
 				tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
+			else
+			{
+				IO.out(ERROR);
+			}
 			//status del tamagochi
-			IO.out(tam.toString());
+			IO.out(tam.status());
 			
 		}while(!tam.isMorto()&&!par.equalsIgnoreCase(CASE_EXIT));
 		
@@ -76,4 +85,5 @@ public class TamaGod
 		
 		return new Tamagochi(str[0],Integer.parseInt(str[1]),Integer.parseInt(str[2]));
 	}
+
 }

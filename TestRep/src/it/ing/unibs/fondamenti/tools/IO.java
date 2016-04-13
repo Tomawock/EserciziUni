@@ -42,8 +42,7 @@ public class IO
 		}
 
 		public static void main(String[] args)
-		{
-			
+		{	
 			IO.out(IO.inKeyBoard(true));
 		}
 

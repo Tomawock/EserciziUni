@@ -18,19 +18,32 @@ public class Tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
 	private int sazieta=MAX_VITA; 		//grado di sazietas
 	//Costruttori
+	/**
+	 * Default cosnsctructor
+	 */
 	public Tamagochi()
 	{
 		//
 	}
 	
+	/**Costruttore che crea un tamagochi con nome soddisfazione e sazietà
+	 * 
+	 * @param nome,del tamagochi
+	 * @param soddisfazione,del tamagochi
+	 * @param sazieta,del tamagochi
+	 */
 	public Tamagochi(String nome, int soddisfazione, int sazieta) 
 	{
 		this.nome = nome;
 		this.soddisfazione = soddisfazione;
 		this.sazieta = sazieta;
 	}
-
-	//funzioni
+	
+	//Funzioni
+	/**Da delle carezze al tamagochi,riduce la sazietà aumenta soddisfazione
+	 * 
+	 * @param quantità di carezze date al tamagochi
+	 */
 	public void daiCarezza(int carezze)
 	{
 		//aumenta grado di soddisfazione e diminusce della meta la sazieta
@@ -42,6 +55,10 @@ public class Tamagochi
 		}
 	}
 	
+	/**Da dei biscotti al tamagochi,riduce la soddisfazone aumenta la sazietà
+	 * 
+	 * @param quantita di biscotti ingeriti
+	 */
 	public void daiBiscotto(int biscotto)
 	{
 		//aumenta del 10% il valore di sazietà e diminuisce la soddisfazione di 1/4
@@ -49,6 +66,10 @@ public class Tamagochi
 		soddisfazione-=(biscotto/SOD_BISC);
 	}
 	
+	/**Controlla lo stato del tamagchi e dice se è vivo o meno
+	 * 
+	 * @return true se è morto, false se è vivo
+	 */
 	public boolean isMorto()
 	{
 		if (sazieta<=MIN_VITA || sazieta >=MAX_VITA || soddisfazione<=MIN_VITA)
@@ -61,6 +82,10 @@ public class Tamagochi
 		}
 	}
 	
+	/**Controlla se è felice o meno il Tamagochi
+	 * 
+	 * @return true se è infelice, false se è felice
+	 */
 	public boolean isInfelice()
 	{
 		if (sazieta<SOGLIA_SAZ || sazieta>MAX_SAZ || soddisfazione<SOGLIA_SODD)
@@ -73,28 +98,43 @@ public class Tamagochi
 		}
 	}
 	
-	
-	@Override
-	public String toString() 
+	/**Restituisce la stringa con lo status del tuo tamagochi
+	 * 
+	 * @return stato del Tamagochi, sottospece di toString()
+	 */
+	public String status() 
 	{
 		return "Nome=" + nome + ", soddisfazione=" + soddisfazione + ", sazieta=" + sazieta + ", Morto="
 				+ isMorto() + ", Infelice=" + isInfelice() + "]";
 	}
-
+	
+	/**Getter del nome
+	 * 
+	 * @return nome del Tamagochi
+	 */
 	public String getNome() 
 	{
 		return nome;
 	}
-
-	public double getSoddisfazione() 
+	
+	/**
+	 * Getter della soddisfazione
+	 * @return valore della soddisfazione
+	 */
+	public int getSoddisfazione() 
 	{
 		return soddisfazione;
 	}
-
-	public double getSazieta() 
+	
+	/**
+	 * Getter della sazietà
+	 * @return valore della sazietà
+	 */
+	public int getSazieta() 
 	{
 		return sazieta;
 	}
+	
 	public static void main(String[] args)
 	{
 		Tamagochi t= new Tamagochi();
