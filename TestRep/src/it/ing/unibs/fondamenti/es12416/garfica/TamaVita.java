@@ -42,6 +42,8 @@ public class TamaVita
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		tamaVita.setContentPane(contentPane);
 		
+		JEditorPane immagine = new JEditorPane();
+		
 		JButton btnCarezza = new JButton("Accarezza");
 		
 		btnCarezza.addMouseListener(new MouseAdapter() {
@@ -49,10 +51,11 @@ public class TamaVita
 			public void mouseClicked(MouseEvent arg0) 
 			{
 				tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
+				immagine.setText(tam.status());
 			}
 		});
 		
-		JEditorPane immagine = new JEditorPane();
+		
 		immagine.setEditable(false);
 		immagine.setDropMode(DropMode.INSERT);
 		immagine.setText(tam.status());
@@ -63,6 +66,7 @@ public class TamaVita
 			public void mouseClicked(MouseEvent e) 
 			{
 				tam.daiBiscotti(myMath.randInt(RANGE_MIN,RANGE_MAX));
+				immagine.setText(tam.status());
 			}
 		});
 		
