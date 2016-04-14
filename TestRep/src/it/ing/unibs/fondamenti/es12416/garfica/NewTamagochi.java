@@ -1,7 +1,5 @@
 package it.ing.unibs.fondamenti.es12416.garfica;
 
-
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -33,7 +31,6 @@ public class NewTamagochi
 		window.frmNewTamagoci.setVisible(true);
 
 	}
-
 	/**
 	 * Create the application.
 	 */
