@@ -1,8 +1,5 @@
 package it.ing.unibs.fondamenti.es12416.garfica;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,7 +12,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.DropMode;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
@@ -33,20 +29,30 @@ public class TamaVita
 	 */
 	public TamaVita(Tamagochi tam) 
 	{
+		initialize(tam);
+	}
+	private void initialize(Tamagochi tam)
+	{
 		tamaVita=new JFrame();
+		contentPane = new JPanel();
+		JLabel lblNewLabel = new JLabel("Stai Giocando con "+tam.getNome());
+		JEditorPane immagine = new JEditorPane();
+		JButton btnEsci = new JButton("Esci");
+		JButton btnCarezza = new JButton("Accarezza");
+		JButton btnBiscotto = new JButton("Dai un Biscotto");
+		
+		
+		
 		tamaVita.setTitle("Tamagochi");
 		tamaVita.setResizable(false);
 		tamaVita.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		tamaVita.setBounds(100, 100, 390, 267);
-		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		tamaVita.setContentPane(contentPane);
 		
-		JEditorPane immagine = new JEditorPane();
 		
-		JButton btnCarezza = new JButton("Accarezza");
-		
-		btnCarezza.addMouseListener(new MouseAdapter() {
+		btnCarezza.addMouseListener(new MouseAdapter() 
+		{
 			@Override
 			public void mouseClicked(MouseEvent arg0) 
 			{
@@ -55,13 +61,8 @@ public class TamaVita
 			}
 		});
 		
-		
-		immagine.setEditable(false);
-		immagine.setDropMode(DropMode.INSERT);
-		immagine.setText(tam.status());
-		
-		JButton btnBiscotto = new JButton("Dai un Biscotto");
-		btnBiscotto.addMouseListener(new MouseAdapter() {
+		btnBiscotto.addMouseListener(new MouseAdapter() 
+		{
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
@@ -70,8 +71,8 @@ public class TamaVita
 			}
 		});
 		
-		JButton btnEsci = new JButton("Esci");
-		btnEsci.addMouseListener(new MouseAdapter() {
+		btnEsci.addMouseListener(new MouseAdapter() 
+		{
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
@@ -79,7 +80,7 @@ public class TamaVita
 			}
 		});
 		
-		JLabel lblNewLabel = new JLabel("Stai Giocando con "+tam.getNome());
+		
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -111,6 +112,7 @@ public class TamaVita
 						.addComponent(immagine, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
+		
 		contentPane.setLayout(gl_contentPane);
 	}
 	
