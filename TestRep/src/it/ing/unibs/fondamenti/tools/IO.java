@@ -1,5 +1,6 @@
 package it.ing.unibs.fondamenti.tools;
 
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -40,10 +41,9 @@ public class IO
 		{
 			System.out.println(s);
 		}
-
 		public static void main(String[] args)
 		{	
-			IO.out(IO.inKeyBoard(true));
+			//IO.outOnFrame("Ciaos");
 		}
 
 }

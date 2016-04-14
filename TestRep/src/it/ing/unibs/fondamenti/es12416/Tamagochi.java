@@ -135,6 +135,18 @@ public class Tamagochi
 		return sazieta;
 	}
 	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setSoddisfazione(int soddisfazione) {
+		this.soddisfazione = soddisfazione;
+	}
+
+	public void setSazieta(int sazieta) {
+		this.sazieta = sazieta;
+	}
+
 	public static void main(String[] args)
 	{
 		Tamagochi t= new Tamagochi();
