@@ -13,7 +13,7 @@ public class Tamagochi
 	private final static int MAX_SAZ=90;
 	private final static int MIN_VITA=0;
 	private final static int MAX_VITA=100;
-	//ttributi
+	//attributi
 	private String nome;					//nome tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
 	private int sazieta=MAX_VITA; 		//grado di sazietas

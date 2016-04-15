@@ -73,9 +73,7 @@ public class TamaVita
 		JLabel lblStato = new JLabel("");
 		TamaVita.control(tam,lblImmagine,lblStato);
 		//lblImmagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.jpg")));
-		
-		
-		
+		//set degli attributi degli oggetti
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImmagine.setHorizontalAlignment(SwingConstants.CENTER);
 		lblStato.setHorizontalAlignment(SwingConstants.CENTER);
@@ -108,7 +106,7 @@ public class TamaVita
 			public void mouseClicked(MouseEvent e) 
 			{
 				tam.daiBiscotti(myMath.randInt(RANGE_MIN,RANGE_MAX));
-				
+				//se il tamagochi muore spengo i bottoni
 				if(!TamaVita.control(tam,lblImmagine,lblStato))
 				{
 					btnCarezza.setEnabled(false);
