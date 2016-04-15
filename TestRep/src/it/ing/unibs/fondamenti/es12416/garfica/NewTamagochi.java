@@ -42,6 +42,7 @@ public class NewTamagochi
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	@SuppressWarnings("unchecked")
 	private void initialize()
 	{
 		tam=new Tamagochi();
@@ -49,7 +50,7 @@ public class NewTamagochi
 		frmNewTamagoci = new JFrame();
 		frmNewTamagoci.setResizable(false);
 		frmNewTamagoci.setTitle("New Tamagoci");
-		frmNewTamagoci.setBounds(100, 100, 340, 170);
+		frmNewTamagoci.setBounds(100, 100, 405, 170);
 		frmNewTamagoci.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmNewTamagoci.getContentPane().setLayout(null);
 		//Setta il il text in cui verrà salvato il nome del tamagochi
@@ -57,35 +58,35 @@ public class NewTamagochi
 		txtNomeTamagochi.setHorizontalAlignment(SwingConstants.CENTER);
 		txtNomeTamagochi.setEnabled(true);
 		txtNomeTamagochi.setEditable(true);
-		txtNomeTamagochi.setBounds(152, 11, 170, 20);
+		txtNomeTamagochi.setBounds(219, 11, 170, 20);
 		frmNewTamagoci.getContentPane().add(txtNomeTamagochi);
 		//Setta il label del nome del tamagochi
 		JLabel lblNomeTamagochi = new JLabel("Nome Tamagochi");
-		lblNomeTamagochi.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNomeTamagochi.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNomeTamagochi.setLabelFor(txtNomeTamagochi);
-		lblNomeTamagochi.setBounds(10, 11, 110, 20);
+		lblNomeTamagochi.setBounds(10, 11, 199, 20);
 		frmNewTamagoci.getContentPane().add(lblNomeTamagochi);
 		//Setta il label della sazietà del tamagochi
 		JLabel lblSazieta = new JLabel("Grado Saziet\u00E0");
-		lblSazieta.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSazieta.setBounds(10, 42, 120, 20);
+		lblSazieta.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSazieta.setBounds(10, 42, 199, 20);
 		frmNewTamagoci.getContentPane().add(lblSazieta);
 		//Combo box dei dati della sazieta
 		JComboBox cbSazieta = new JComboBox();
 		cbSazieta.setMaximumRowCount(10);
 		cbSazieta.setModel(new DefaultComboBoxModel(VALUES));
-		cbSazieta.setBounds(152, 42, 70, 20);
+		cbSazieta.setBounds(219, 42, 70, 20);
 		frmNewTamagoci.getContentPane().add(cbSazieta);
 		//Combo box dei dati della soddisfazione
 		JComboBox cbSoddisfazione = new JComboBox();
 		cbSoddisfazione.setMaximumRowCount(10);
 		cbSoddisfazione.setModel(new DefaultComboBoxModel(VALUES));
-		cbSoddisfazione.setBounds(152, 73, 70, 20);
+		cbSoddisfazione.setBounds(219, 73, 70, 20);
 		frmNewTamagoci.getContentPane().add(cbSoddisfazione);
 		//Setta il label della soddisfazione del tamagochi
 		JLabel lblSoddisfazione = new JLabel("Grado Soddisfazione");
-		lblSoddisfazione.setHorizontalAlignment(SwingConstants.LEFT);
-		lblSoddisfazione.setBounds(10, 73, 110, 20);
+		lblSoddisfazione.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSoddisfazione.setBounds(10, 73, 199, 20);
 		frmNewTamagoci.getContentPane().add(lblSoddisfazione);
 		//Bottone di conferma
 		JButton btnOk = new JButton("OK");
@@ -103,7 +104,7 @@ public class NewTamagochi
 				tamaVita.getMe().setVisible(true);
 			}
 		});
-		btnOk.setBounds(10, 104, 70, 25);
+		btnOk.setBounds(10, 105, 70, 25);
 		frmNewTamagoci.getContentPane().add(btnOk);
 	}
 }
