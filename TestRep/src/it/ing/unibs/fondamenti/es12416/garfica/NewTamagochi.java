@@ -22,16 +22,6 @@ public class NewTamagochi
 	private Tamagochi tam;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) 
-	{
-
-		NewTamagochi window = new NewTamagochi();
-		window.frmNewTamagoci.setVisible(true);
-
-	}
-	/**
 	 * Create the application.
 	 */
 	public NewTamagochi() 
@@ -106,5 +96,6 @@ public class NewTamagochi
 		});
 		btnOk.setBounds(10, 105, 70, 25);
 		frmNewTamagoci.getContentPane().add(btnOk);
+		frmNewTamagoci.setVisible(true);
 	}
 }

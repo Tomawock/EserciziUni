@@ -31,7 +31,7 @@ public class TamaVita
 	 */
 	public TamaVita(Tamagochi tam) 
 	{
-		initialize(tam);
+		initialize(tam);	
 	}
 	
 	private static boolean control(Tamagochi tam,JLabel immagine,JLabel stato) 
@@ -49,7 +49,7 @@ public class TamaVita
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"è Triste");
 			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamSad.jpg")));
-			stato.setText("INFELICE");
+			stato.setText("TRISTE");
 		}
 		else
 		{
@@ -72,7 +72,8 @@ public class TamaVita
 		JButton btnBiscotto = new JButton("Dai un Biscotto");
 		JLabel lblImmagine = new JLabel("");
 		JLabel lblStato = new JLabel("");
-		lblImmagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.jpg")));
+		TamaVita.control(tam,lblImmagine,lblStato);
+		//lblImmagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.jpg")));
 		
 		
 		
@@ -97,6 +98,7 @@ public class TamaVita
 				if(!TamaVita.control(tam,lblImmagine,lblStato))
 				{
 					btnCarezza.setEnabled(false);
+					btnBiscotto.setEnabled(false);
 				}
 			}
 		});
@@ -110,6 +112,7 @@ public class TamaVita
 				
 				if(!TamaVita.control(tam,lblImmagine,lblStato))
 				{
+					btnCarezza.setEnabled(false);
 					btnBiscotto.setEnabled(false);
 				}
 			}
