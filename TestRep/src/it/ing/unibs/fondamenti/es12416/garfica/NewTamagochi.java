@@ -32,7 +32,7 @@ public class NewTamagochi
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize()
 	{
 		tam=new Tamagochi();

@@ -4,6 +4,7 @@ public class MainGrafic {
 
 	public static void main(String[] args) 
 	{
+		@SuppressWarnings("unused")
 		NewTamagochi window = new NewTamagochi();
 	}
 
