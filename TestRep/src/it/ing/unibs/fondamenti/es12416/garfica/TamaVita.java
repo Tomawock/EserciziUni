@@ -40,20 +40,20 @@ public class TamaVita
 		if (tam.isMorto())
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"è MORTO");
-			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamDead.jpg")));
+			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamDead.png")));
 			stato.setText("MORTO");
 			ret=false;
 		}
 		else if(tam.isInfelice())
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"è Triste");
-			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamSad.jpg")));
+			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamSad.png")));
 			stato.setText("TRISTE");
 		}
 		else
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"STA BENE");
-			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.jpg")));
+			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.png")));
 			stato.setText("FELICE");
 			//immagine.
 		}
