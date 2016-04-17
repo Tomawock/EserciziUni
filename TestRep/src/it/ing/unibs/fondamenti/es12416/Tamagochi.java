@@ -1,7 +1,5 @@
 package it.ing.unibs.fondamenti.es12416;
 
-import it.ing.unibs.fondamenti.tools.IO;
-
 public class Tamagochi 
 {
 	//Costanti
@@ -146,11 +144,11 @@ public class Tamagochi
 	public void setSazieta(int sazieta) {
 		this.sazieta = sazieta;
 	}
-
+	/*
 	public static void main(String[] args)
 	{
 		Tamagochi t= new Tamagochi();
 		t.daiBiscotti(1);
 		IO.out(t.getSazieta());
-	}
+	}*/
 }
