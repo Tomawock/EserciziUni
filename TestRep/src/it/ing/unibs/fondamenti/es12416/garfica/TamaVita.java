@@ -26,13 +26,20 @@ public class TamaVita
 	private JPanel contentPane;
 
 	/**
-	 * Create the frame.
+	 * Costruttore a cui viene passato un Tamagochi
+	 * @param tam Oggetto tamagochi che è stato creato in precedenza da un altro frame
 	 */
 	public TamaVita(Tamagochi tam) 
 	{
 		initialize(tam);	
 	}
-	
+	/**
+	 * Funzione di controllo in grado di modificare i valori del frame e di alcuni oggeti presenti al suo interno,iene invocata per controllare e modificare il frame stesso
+	 * @param tam Oggetto Tamagochi
+	 * @param immagine Zona in cui viene caricata l'immagine
+	 * @param stato label in cui viene definito lo stato del tamagochi
+	 * @return
+	 */
 	private static boolean control(Tamagochi tam,JLabel immagine,JLabel stato) 
 	{     
 		boolean ret=true;
@@ -60,7 +67,10 @@ public class TamaVita
 		immagine.updateUI();
 		return ret;
 	}
-
+	/**
+	 * Funzione che inizializza tutti i valori dei vari componenti del frame e gestisce i vari event del frame
+	 * @param tam passa un oggetto tamagochi per gestire la modifica dei valori del tamagochi creto in precedenza
+	 */
 	private void initialize(Tamagochi tam)
 	{
 		tamaVita=new JFrame();
@@ -80,11 +90,10 @@ public class TamaVita
 		tamaVita.setTitle("Tamagochi");
 		tamaVita.setResizable(false);
 		tamaVita.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		tamaVita.setBounds(100, 100, 428, 400);
+		tamaVita.setBounds(100, 100, 452, 400);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		tamaVita.setContentPane(contentPane);
-		
-		
+			
 		btnCarezza.addMouseListener(new MouseAdapter() 
 		{
 			@Override
@@ -130,24 +139,20 @@ public class TamaVita
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(lblImmagine, GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-							.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
-								.addContainerGap()
-								.addComponent(lblStato, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-							.addGroup(Alignment.LEADING, gl_contentPane.createSequentialGroup()
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+							.addGroup(gl_contentPane.createSequentialGroup()
 								.addGap(20)
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE))))
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE))
+							.addComponent(lblStato, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(lblImmagine, GroupLayout.PREFERRED_SIZE, 271, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(btnEsci, GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-						.addComponent(btnBiscotto, GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-						.addComponent(btnCarezza, GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+						.addComponent(btnEsci, GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+						.addComponent(btnBiscotto, GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+						.addComponent(btnCarezza, GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		gl_contentPane.setVerticalGroup(
@@ -155,7 +160,7 @@ public class TamaVita
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 22, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(btnCarezza, GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
 							.addGap(26)
@@ -163,15 +168,18 @@ public class TamaVita
 							.addGap(91)
 							.addComponent(btnEsci, GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))
 						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(lblStato, GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(lblImmagine)))
+							.addComponent(lblStato, GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+							.addGap(18)
+							.addComponent(lblImmagine, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		
 		contentPane.setLayout(gl_contentPane);
 	}
-	
+	/**
+	 * Getter del frame
+	 * @return tamaVita: frame di questa classe
+	 */
 	public JFrame getMe()
 	{
 		return tamaVita;

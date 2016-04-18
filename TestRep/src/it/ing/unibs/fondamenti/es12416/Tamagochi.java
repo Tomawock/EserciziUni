@@ -66,7 +66,7 @@ public class Tamagochi
 	
 	/**Controlla lo stato del tamagchi e dice se è vivo o meno
 	 * 
-	 * @return true se è morto, false se è vivo
+	 * @return true :se è morto. false: se è vivo
 	 */
 	public boolean isMorto()
 	{
@@ -82,7 +82,7 @@ public class Tamagochi
 	
 	/**Controlla se è felice o meno il Tamagochi
 	 * 
-	 * @return true se è infelice, false se è felice
+	 * @return true :se è infelice, false :se è felice
 	 */
 	public boolean isInfelice()
 	{
@@ -122,8 +122,7 @@ public class Tamagochi
 	public int getSoddisfazione() 
 	{
 		return soddisfazione;
-	}
-	
+	}	
 	/**
 	 * Getter della sazietà
 	 * @return valore della sazietà
@@ -143,21 +142,21 @@ public class Tamagochi
 	}
 	/**
 	 * Set il nome del tamagochi
-	 * @param nome: noe che viene settato dal tamagochi
+	 * @param nome nome che viene settato dal tamagochi
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	/**
 	 * Set la soddisfazone del tamacoghi
-	 * @param soddisfazione: numero di quanto è soddisfatto il tamagohi
+	 * @param soddisfazione numero di quanto è soddisfatto il tamagohi
 	 */
 	public void setSoddisfazione(int soddisfazione) {
 		this.soddisfazione = soddisfazione;
 	}
 	/**
 	 * Set la sazietà del tamagochi
-	 * @param sazieta: numero di quanto è sazio il tamagohi
+	 * @param sazieta numero di quanto è sazio il tamagohi
 	 */
 	public void setSazieta(int sazieta) {
 		this.sazieta = sazieta;
