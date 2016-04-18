@@ -4,6 +4,7 @@ import it.ing.unibs.fondamenti.tools.*;
 
 public class TamaGod 
 {
+	//Costanti
 	private final static String CASE_BISCOTTO="1";
 	private final static String CASE_CAREZZA="2";
 	private final static String CASE_EXIT="3";
@@ -48,7 +49,7 @@ public class TamaGod
 			{
 				tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
-			else
+			else if(!par.equalsIgnoreCase(CASE_EXIT))
 			{
 				IO.out(ERROR);
 			}

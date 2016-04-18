@@ -14,7 +14,7 @@ public class Tamagochi
 	//attributi
 	private String nome;					//nome tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
-	private int sazieta=MAX_VITA; 		//grado di sazietas
+	private int sazieta=MAX_VITA; 			//grado di sazietas
 	//Costruttori
 	/**
 	 * Default cosnsctructor
@@ -132,18 +132,37 @@ public class Tamagochi
 	{
 		return sazieta;
 	}
-	
+	/**
+	 * Ritorna MAX_VITA
+	 * 
+	 * @return MAX_VITA: il livello massimo della vita del tamagochi
+	 */
+	public Integer getMAXVITA()
+	{
+		return MAX_VITA;
+	}
+	/**
+	 * Set il nome del tamagochi
+	 * @param nome: noe che viene settato dal tamagochi
+	 */
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	/**
+	 * Set la soddisfazone del tamacoghi
+	 * @param soddisfazione: numero di quanto è soddisfatto il tamagohi
+	 */
 	public void setSoddisfazione(int soddisfazione) {
 		this.soddisfazione = soddisfazione;
 	}
-
+	/**
+	 * Set la sazietà del tamagochi
+	 * @param sazieta: numero di quanto è sazio il tamagohi
+	 */
 	public void setSazieta(int sazieta) {
 		this.sazieta = sazieta;
 	}
+	
 	/*
 	public static void main(String[] args)
 	{
