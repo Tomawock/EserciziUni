@@ -1,5 +1,7 @@
 package it.ing.unibs.fondamenti.es12416;
 
+import java.time.Duration;
+
 public class Tamagochi 
 {
 	//Costanti
@@ -24,8 +26,8 @@ public class Tamagochi
 		//
 	}
 	
-	/**Costruttore che crea un tamagochi con nome soddisfazione e sazietà
-	 * 
+	/**
+	 * Costruttore che crea un tamagochi con nome soddisfazione e sazietà
 	 * @param nome,del tamagochi
 	 * @param soddisfazione,del tamagochi
 	 * @param sazieta,del tamagochi
@@ -38,8 +40,8 @@ public class Tamagochi
 	}
 	
 	//Funzioni
-	/**Da delle carezze al tamagochi,riduce la sazietà aumenta soddisfazione
-	 * 
+	/**
+	 * Da delle carezze al tamagochi,riduce la sazietà aumenta soddisfazione
 	 * @param carezze,quantità di carezze date al tamagochi
 	 */
 	public void daiCarezza(int carezze)
@@ -53,8 +55,8 @@ public class Tamagochi
 		}
 	}
 	
-	/**Da dei biscotti al tamagochi,riduce la soddisfazone aumenta la sazietà
-	 * 
+	/**
+	 * Da dei biscotti al tamagochi,riduce la soddisfazone aumenta la sazietà
 	 * @param biscotti,quantita di biscotti ingeriti
 	 */
 	public void daiBiscotti(int biscotti)
@@ -64,8 +66,8 @@ public class Tamagochi
 		soddisfazione-=(biscotti/SOD_BISC);
 	}
 	
-	/**Controlla lo stato del tamagchi e dice se è vivo o meno
-	 * 
+	/**
+	 * Controlla lo stato del tamagchi e dice se è vivo o meno
 	 * @return true :se è morto. false: se è vivo
 	 */
 	public boolean isMorto()
@@ -80,8 +82,8 @@ public class Tamagochi
 		}
 	}
 	
-	/**Controlla se è felice o meno il Tamagochi
-	 * 
+	/**
+	 * Controlla se è felice o meno il Tamagochi
 	 * @return true :se è infelice, false :se è felice
 	 */
 	public boolean isInfelice()
@@ -96,8 +98,8 @@ public class Tamagochi
 		}
 	}
 	
-	/**Restituisce la stringa con lo status del tuo tamagochi
-	 * 
+	/**
+	 * Restituisce la stringa con lo status del tuo tamagochi
 	 * @return stato del Tamagochi, sottospece di toString()
 	 */
 	public String status() 
@@ -105,16 +107,15 @@ public class Tamagochi
 		return "Nome=" + nome + ", soddisfazione=" + soddisfazione + ", sazieta=" + sazieta + ", Morto="
 				+ isMorto() + ", Infelice=" + isInfelice() + "]";
 	}
-	
-	/**Getter del nome
-	 * 
+
+	/**
+	 * Getter del nome
 	 * @return nome del Tamagochi
 	 */
 	public String getNome() 
 	{
 		return nome;
-	}
-	
+	}	
 	/**
 	 * Getter della soddisfazione
 	 * @return valore della soddisfazione
