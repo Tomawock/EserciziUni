@@ -4,13 +4,17 @@ import it.ing.unibs.fondamenti.tools.IO;
 
 public class Main 
 {
-	private static final String ADDWEEK="1";
-	private static final String ESCI="3";
 	private static final String ERRMAX="UN GIORNO è STATO SUERPATO IL LIMITE MASSIMO DI "+Settimana.VMAX;
 	private static final String ERRMED="SUERPATO IL LIMITE MEDIO SETTIMANALE DI "+Settimana.VMAX;
 	private static final String AGGGIORNO ="AGGIUNGI I DATI DEL GIORNO ";
-	private static final Object SETANNO = "INSERISCI L'ANNO ";
-	private static final Object SETSETTIMANA = "";
+	private static final String SETANNO = "INSERISCI L'ANNO ";
+	private static final String SETSETTIMANA = "INSERISCI IL NUMERO DELLA SETTIMANA 1-53";
+	private static final String CASESTAY="1";
+	private static final String CASEEXIT="2";
+	private static final String SCELTA = "PREMERE "+CASEEXIT+" PER USCIRE O "+CASESTAY+" PER CONTINUARE";
+	private static final String ERRDATI = "SCEGLIERE UN DATO CORRETTO TRA:\n"+SCELTA;
+	private static final String OUT = "SEI USCITO";
+	private static final String DEFAULT = "NON CI SONO STATI ERRORI";
 	
 	public static Settimana setSettimana()
 	{
@@ -23,6 +27,7 @@ public class Main
 		{
 			IO.out(SETSETTIMANA);
 			settimana=Integer.parseInt(IO.inKeyBoard(true));
+			
 		}while(settimana>=1&&settimana<=53);
 		for(int i=0;i<Settimana.NGIORNI;i++)
 		{
@@ -33,14 +38,44 @@ public class Main
 		return new Settimana(anno,settimana,giorni);
 		
 	}
-	private static void loop(Settimana setWeek)
+	
+	private static void loop(Settimana week)
 	{
+		String res="";
+		do
+		{
+			IO.out(SCELTA);
+			res=IO.inKeyBoard(true);
+			do
+			{
+				IO.out(ERRDATI);
+				res=IO.inKeyBoard(true);
+				
+			}while(!res.equalsIgnoreCase(CASEEXIT)&&!res.equalsIgnoreCase(CASESTAY));
+			
+			if(res.equals(CASESTAY))
+			{
+				if(week.isOverMax())
+				{
+					IO.out(ERRMAX);
+				}
+				if(week.isOverMed())
+				{
+					IO.out(ERRMED);
+				}
+				if(!week.isOverMax()&&!week.isOverMed())
+				{
+					IO.out(DEFAULT);
+				}
+			}
+		}while(!res.equalsIgnoreCase(CASEEXIT));
 		
+		IO.out(OUT);
 	}
 
 	public static void main(String[] args)
 	{
-		Main.loop(Main.setWeek());
+		Main.loop(Main.setSettimana());
 	}
 
 }
