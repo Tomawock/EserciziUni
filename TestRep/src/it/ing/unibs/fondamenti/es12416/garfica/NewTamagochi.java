@@ -19,7 +19,7 @@ public class NewTamagochi
 	private JFrame frmNewTamagoci;
 	private TamaVita tamaVita; //finestra relativa al ciclo di vita del tamagochi
 	private JTextField txtNomeTamagochi;
-	private Tamagochi tam;
+	private Tamagotchi tam;
 
 	/**
 	 * Costruttore di default
@@ -35,7 +35,7 @@ public class NewTamagochi
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize()
 	{
-		tam=new Tamagochi();
+		tam=new Tamagotchi();
 		//Crea un nuovo jfarme e gli setta i valori
 		frmNewTamagoci = new JFrame();
 		frmNewTamagoci.setResizable(false);
@@ -90,11 +90,13 @@ public class NewTamagochi
 				tam.setSoddisfazione(Integer.parseInt(cbSoddisfazione.getSelectedItem().toString()));
 				//chiudo la finestra
 				frmNewTamagoci.setVisible(false);
+				//Crea un nuovo oggetto tamagotchi
 				tamaVita = new TamaVita(tam);
+				//Apro quella del loop del tamagotchi
 				tamaVita.getMe().setVisible(true);
 			}
 		});
-		btnOk.setBounds(10, 105, 70, 25);
+		btnOk.setBounds(10, 104, 199, 25);
 		frmNewTamagoci.getContentPane().add(btnOk);
 		frmNewTamagoci.setVisible(true);
 	}

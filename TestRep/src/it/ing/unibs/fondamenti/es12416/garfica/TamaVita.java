@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 
-import it.ing.unibs.fondamenti.es12416.Tamagochi;
+import it.ing.unibs.fondamenti.es12416.Tamagotchi;
 import it.ing.unibs.fondamenti.tools.myMath;
 
 import javax.swing.GroupLayout;
@@ -29,7 +29,7 @@ public class TamaVita
 	 * Costruttore a cui viene passato un Tamagochi
 	 * @param tam Oggetto tamagochi che è stato creato in precedenza da un altro frame
 	 */
-	public TamaVita(Tamagochi tam) 
+	public TamaVita(Tamagotchi tam) 
 	{
 		initialize(tam);	
 	}
@@ -40,7 +40,7 @@ public class TamaVita
 	 * @param stato label in cui viene definito lo stato del tamagochi
 	 * @return
 	 */
-	private static boolean control(Tamagochi tam,JLabel immagine,JLabel stato) 
+	private static boolean control(Tamagotchi tam,JLabel immagine,JLabel stato) 
 	{     
 		boolean ret=true;
 		
@@ -71,7 +71,7 @@ public class TamaVita
 	 * Funzione che inizializza tutti i valori dei vari componenti del frame e gestisce i vari event del frame
 	 * @param tam passa un oggetto tamagochi per gestire la modifica dei valori del tamagochi creto in precedenza
 	 */
-	private void initialize(Tamagochi tam)
+	private void initialize(Tamagotchi tam)
 	{
 		tamaVita=new JFrame();
 		contentPane = new JPanel();
