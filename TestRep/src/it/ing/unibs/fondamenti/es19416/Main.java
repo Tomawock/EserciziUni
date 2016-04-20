@@ -4,7 +4,7 @@ import it.ing.unibs.fondamenti.tools.IO;
 
 public class Main 
 {
-	private static final String ERRMAX="UN GIORNO è STATO SUERPATO IL LIMITE MASSIMO DI "+Settimana.VMAX;
+	private static final String ERRMAX="UN GIORNO è STATO SUPERATO IL LIMITE MASSIMO DI "+Settimana.VMAX;
 	private static final String ERRMED="SUERPATO IL LIMITE MEDIO SETTIMANALE DI "+Settimana.VMAX;
 	private static final String AGGGIORNO ="AGGIUNGI I DATI DEL GIORNO ";
 	private static final String SETANNO = "INSERISCI L'ANNO ";
@@ -14,12 +14,13 @@ public class Main
 	private static final String SCELTA = "PREMERE "+CASEEXIT+" PER USCIRE O "+CASESTAY+" PER CONTINUARE";
 	private static final String ERRDATI = "SCEGLIERE UN DATO CORRETTO TRA:\n"+SCELTA;
 	private static final String OUT = "SEI USCITO";
-	private static final String DEFAULT = "NON CI SONO STATI ERRORI";
+	private static final String DEFAULT = "NON CI SONO STATI ERRORI\n";
 	
-	public static Settimana setSettimana()
+	private static Settimana setSettimana()
 	{
 		double giorni[]=new double[Settimana.NGIORNI];
 		int anno,settimana;
+		//trasformo l'enum in array
 		Giorno giorniSet[]=Giorno.values();
 		IO.out(SETANNO);
 		anno=Integer.parseInt(IO.inKeyBoard(true));
@@ -28,7 +29,8 @@ public class Main
 			IO.out(SETSETTIMANA);
 			settimana=Integer.parseInt(IO.inKeyBoard(true));
 			
-		}while(settimana>=1&&settimana<=53);
+		}while(settimana<1||settimana>53);
+		
 		for(int i=0;i<Settimana.NGIORNI;i++)
 		{
 			IO.out(AGGGIORNO+giorniSet[i]);
@@ -36,25 +38,26 @@ public class Main
 		}
 		
 		return new Settimana(anno,settimana,giorni);
-		
 	}
 	
-	private static void loop(Settimana week)
+	private static void loop()
 	{
 		String res="";
+		Settimana week;
 		do
 		{
 			IO.out(SCELTA);
 			res=IO.inKeyBoard(true);
-			do
+			while(!res.equalsIgnoreCase(CASEEXIT)&&!res.equalsIgnoreCase(CASESTAY))
 			{
 				IO.out(ERRDATI);
 				res=IO.inKeyBoard(true);
 				
-			}while(!res.equalsIgnoreCase(CASEEXIT)&&!res.equalsIgnoreCase(CASESTAY));
+			}
 			
 			if(res.equals(CASESTAY))
 			{
+				week=Main.setSettimana();
 				if(week.isOverMax())
 				{
 					IO.out(ERRMAX);
@@ -75,7 +78,6 @@ public class Main
 
 	public static void main(String[] args)
 	{
-		Main.loop(Main.setSettimana());
+		Main.loop();
 	}
-
 }
