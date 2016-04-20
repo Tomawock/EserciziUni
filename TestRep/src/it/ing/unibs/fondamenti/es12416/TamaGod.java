@@ -22,7 +22,7 @@ public class TamaGod
 	 * 
 	 * @param tam Oggetto di tipo Tamagochi usare funzione CreaTamag
 	 */
-	public static void cicloVitaTamagochi(Tamagochi tam)
+	public static void cicloVitaTamagochi(Tamagotchi tam)
 	{
 		String par="";
 		do
@@ -77,14 +77,14 @@ public class TamaGod
 	 * 
 	 * @return Tamagochi un nuovo oggetto di tipo tamagochi 
 	 */
-	public static Tamagochi creaTam()
+	public static Tamagotchi creaTam()
 	{
 		IO.out(INS);
 		String s=IO.inKeyBoard(true);
 		String[] str={"ERR","-1","-1"};
 		str=s.split("-");
 		
-		return new Tamagochi(str[0],Integer.parseInt(str[1]),Integer.parseInt(str[2]));
+		return new Tamagotchi(str[0],Integer.parseInt(str[1]),Integer.parseInt(str[2]));
 	}
 
 }

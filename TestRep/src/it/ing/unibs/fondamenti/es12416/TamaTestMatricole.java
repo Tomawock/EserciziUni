@@ -1,4 +1,4 @@
-package it.unibs.ing.fp.lab.tamagotchi;
+package it.ing.unibs.fondamenti.es12416;
 
 import static org.junit.Assert.*;
 

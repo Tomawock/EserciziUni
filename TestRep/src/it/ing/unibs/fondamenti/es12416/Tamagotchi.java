@@ -1,8 +1,7 @@
 package it.ing.unibs.fondamenti.es12416;
 
-import java.sql.Time;
 
-public class Tamagochi 
+public class Tamagotchi 
 {
 	//Costanti
 	private final static int SAZ_CAREZZE=2;
@@ -17,12 +16,12 @@ public class Tamagochi
 	private String nome;					//nome tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
 	private int sazieta=MAX_VITA; 			//grado di sazietas
-	private double startTime=0.0;
+	//private double startTime=0.0;
 	//Costruttori
 	/**
 	 * Default cosnsctructor
 	 */
-	public Tamagochi()
+	public Tamagotchi()
 	{
 		//
 	}
@@ -39,7 +38,7 @@ public class Tamagochi
 	 * @param soddisfazione,del tamagochi
 	 * @param sazieta,del tamagochi
 	 */
-	public Tamagochi(String nome, int soddisfazione, int sazieta) 
+	public Tamagotchi(String nome, int soddisfazione, int sazieta) 
 	{
 		this.nome = nome;
 		this.soddisfazione = soddisfazione;
@@ -177,4 +176,21 @@ public class Tamagochi
 		t.daiBiscotti(1);
 		IO.out(t.getSazieta());
 	}*/
+	//WRAPPER FUNCTION FOR J TEST
+	public boolean sonoMorto()
+	{
+		return this.isMorto();
+	}
+	public boolean sonoTriste()
+	{
+		return this.isInfelice();
+	}
+	public void riceviCarezze(int car)
+	{
+		this.daiCarezza(car);
+	}
+	public void riceviBiscotti(int bisc)
+	{
+		this.daiBiscotti(bisc);
+	}
 }
