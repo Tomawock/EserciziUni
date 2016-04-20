@@ -4,8 +4,8 @@ import it.ing.unibs.fondamenti.tools.IO;
 
 public class Main 
 {
-	private static final String ERRMAX="UN GIORNO è STATO SUPERATO IL LIMITE MASSIMO DI "+Settimana.VMAX;
-	private static final String ERRMED="SUERPATO IL LIMITE MEDIO SETTIMANALE DI "+Settimana.VMAX;
+	private static final String ERRMAX="UN GIORNO è STATO SUPERATO IL LIMITE MASSIMO DI "+Settimana.VMAX+"\n";
+	private static final String ERRMED="SUPERATO IL LIMITE MEDIO SETTIMANALE DI "+Settimana.VMED+"\n";
 	private static final String AGGGIORNO ="AGGIUNGI I DATI DEL GIORNO ";
 	private static final String SETANNO = "INSERISCI L'ANNO ";
 	private static final String SETSETTIMANA = "INSERISCI IL NUMERO DELLA SETTIMANA 1-53";
@@ -72,7 +72,7 @@ public class Main
 				}
 			}
 		}while(!res.equalsIgnoreCase(CASEEXIT));
-		
+		IO.inKeyBoard(false);
 		IO.out(OUT);
 	}
 

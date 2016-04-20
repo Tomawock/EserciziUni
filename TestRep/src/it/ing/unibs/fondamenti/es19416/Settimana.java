@@ -31,10 +31,10 @@ public class Settimana
 	//funzioni
 	public boolean isOverMax()
 	{
-		double max=0.0;
-		for(int i=0;i<NGIORNI-1;i++)
+		double max=giorni[0];
+		for(int i=0;i<NGIORNI;i++)
 		{
-			if(giorni[i]>giorni[i+1])
+			if(max<=giorni[i])
 			{
 				max=giorni[i];
 			}

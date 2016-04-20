@@ -35,12 +35,13 @@ public class IO
 		}
 
 		/**
-		 * Funzione che tampa a video i dati
+		 * Funzione che stampa a video i dati
 		 */
 		public static void out(Object s)
 		{
 			System.out.println(s);
 		}
+		
 		public static void main(String[] args)
 		{	
 			//IO.outOnFrame("Ciaos");
