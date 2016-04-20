@@ -1,0 +1,63 @@
+package it.ing.unibs.fondamenti.es19416;
+
+public class Settimana 
+{
+	//Costanti
+	public static final int NGIORNI=7;
+	public static final double VMAX=75;
+	public static final double VMED=50;
+	//attributi
+	private int anno;
+	private int nSettimana;
+	private double giorni[];
+	//costruttore
+	public Settimana(int anno, int nSettimana) 
+	{
+		this.anno = anno;
+		this.nSettimana = nSettimana;
+		giorni=new double[NGIORNI];
+	}
+	public Settimana(int anno, int nSettimana, double[] giorni)
+	{
+		this.anno = anno;
+		this.nSettimana = nSettimana;
+		this.giorni = giorni;
+	}
+
+	public Settimana()
+	{
+		//default
+	}
+	//funzioni
+	public boolean isOverMax()
+	{
+		double max=0.0;
+		for(int i=0;i<NGIORNI-1;i++)
+		{
+			if(giorni[i]>giorni[i+1])
+			{
+				max=giorni[i];
+			}
+		}
+		if(max>VMAX)
+			return true;
+		return false;
+	}
+	public boolean isOverMed()
+	{
+		double med=0.0;
+		for(int i=0;i<NGIORNI;i++)
+		{
+			med+=giorni[i];
+		}
+		med/=NGIORNI;
+		if(med>VMED)
+			return true;
+		return false;
+	}
+	//getter e setter
+	public void setGiorni(double[] giorni)
+	{
+		this.giorni = giorni;
+	}
+}

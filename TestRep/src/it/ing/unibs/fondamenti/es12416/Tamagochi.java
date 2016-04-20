@@ -1,6 +1,6 @@
 package it.ing.unibs.fondamenti.es12416;
 
-import java.time.Duration;
+import java.sql.Time;
 
 public class Tamagochi 
 {
@@ -17,6 +17,7 @@ public class Tamagochi
 	private String nome;					//nome tamagochi
 	private int soddisfazione=MAX_VITA/2; 	//grado di soddisfazione
 	private int sazieta=MAX_VITA; 			//grado di sazietas
+	private double startTime=0.0;
 	//Costruttori
 	/**
 	 * Default cosnsctructor
@@ -25,6 +26,12 @@ public class Tamagochi
 	{
 		//
 	}
+	
+	/*private void datiTempo()
+	{
+		Time now=new Time(System.currentTimeMillis());
+		if(now-)
+	}*/
 	
 	/**
 	 * Costruttore che crea un tamagochi con nome soddisfazione e sazietà
