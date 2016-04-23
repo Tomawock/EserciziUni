@@ -48,22 +48,23 @@ public class TamaVita
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"è MORTO");
 			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamDead.png")));
-			stato.setText("MORTO");
+			//stato.setText("MORTO");
 			ret=false;
 		}
 		else if(tam.isInfelice())
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"è Triste");
 			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/tamSad.png")));
-			stato.setText("TRISTE");
+			//stato.setText("TRISTE");
 		}
 		else
 		{
 			//immagine.setText("IL TAMAGOCHI "+tam.getNome()+"STA BENE");
 			immagine.setIcon(new ImageIcon(TamaVita.class.getResource("/Media/TamHappy.png")));
-			stato.setText("FELICE");
+			//stato.setText("FELICE");
 			//immagine.
 		}
+		stato.setText(tam.statusSS());
 		immagine.updateUI();
 		return ret;
 	}
@@ -104,13 +105,14 @@ public class TamaVita
 			@Override
 			public void mouseClicked(MouseEvent arg0) 
 			{
-				tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
 				//se il tamagochi muore spengo i bottoni
 				if(!TamaVita.control(tam,lblImmagine,lblStato))
 				{
 					btnCarezza.setEnabled(false);
 					btnBiscotto.setEnabled(false);
 				}
+				else
+					tam.daiCarezza(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
 		});
 		
@@ -119,13 +121,14 @@ public class TamaVita
 			@Override
 			public void mouseClicked(MouseEvent e) 
 			{
-				tam.daiBiscotti(myMath.randInt(RANGE_MIN,RANGE_MAX));
 				//se il tamagochi muore spengo i bottoni
 				if(!TamaVita.control(tam,lblImmagine,lblStato))
 				{
 					btnCarezza.setEnabled(false);
 					btnBiscotto.setEnabled(false);
 				}
+				else
+					tam.daiBiscotti(myMath.randInt(RANGE_MIN,RANGE_MAX));
 			}
 		});
 		
@@ -183,7 +186,7 @@ public class TamaVita
 	}
 	/**
 	 * Getter del frame
-	 * @return tamaVita: frame di questa classe
+	 * @return tamaVita frame di questa classe
 	 */
 	public JFrame getMe()
 	{

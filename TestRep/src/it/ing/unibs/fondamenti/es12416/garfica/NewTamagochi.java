@@ -30,7 +30,7 @@ public class NewTamagochi
 	}
 
 	/**
-	 * Inizializza i componenti del Frame, crea un nuova Finestra per la creazione di un tamagochi quando si schiaccia il tasto ok viene crato il ciclo di vita del tamagochi
+	 * Inizializza i componenti della classe, crea un nuova Finestra per la creazione di un tamagochi quando si schiaccia il tasto ok viene crato il ciclo di vita del tamagochi
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void initialize()

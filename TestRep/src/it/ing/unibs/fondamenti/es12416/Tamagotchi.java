@@ -113,6 +113,14 @@ public class Tamagotchi
 		return "Nome=" + nome + ", soddisfazione=" + soddisfazione + ", sazieta=" + sazieta + ", Morto="
 				+ isMorto() + ", Infelice=" + isInfelice() + "]";
 	}
+	/**
+	 * Restituisce la stringa con lo status del tuo tamagochi con soddisfazione e sazietà
+	 * @return stato del Tamagochi, sottospece di toString()
+	 */
+	public String statusSS() 
+	{
+		return "soddisfazione=" + soddisfazione + " sazieta=" + sazieta;
+	}
 
 	/**
 	 * Getter del nome
@@ -176,6 +184,7 @@ public class Tamagotchi
 		t.daiBiscotti(1);
 		IO.out(t.getSazieta());
 	}*/
+	
 	//WRAPPER FUNCTION FOR J TEST
 	public boolean sonoMorto()
 	{
