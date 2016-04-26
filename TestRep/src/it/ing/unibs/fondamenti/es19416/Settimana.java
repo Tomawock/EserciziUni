@@ -60,4 +60,20 @@ public class Settimana
 	{
 		this.giorni = giorni;
 	}
+	public int getAnno() {
+		return anno;
+	}
+	public void setAnno(int anno) {
+		this.anno = anno;
+	}
+	public int getnSettimana() {
+		return nSettimana;
+	}
+	public void setnSettimana(int nSettimana) {
+		this.nSettimana = nSettimana;
+	}
+	public double[] getGiorni() {
+		return giorni;
+	}
+	
 }
