@@ -4,6 +4,7 @@ package it.ing.unibs.fondamenti.tools;
 import java.io.BufferedReader;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -47,7 +48,7 @@ public class IO
 	}
 	
 	/**
-	 * Crea il file 
+	 * Crea il file , se è gia presente non fa nulla
 	 * 
 	 * @param percorso di destinazione del file
 	 * @return il file creato
@@ -73,12 +74,12 @@ public class IO
 	}
 	
 	/**
-	 * Permette la scrittura di una sringa su un file
+	 * Permette la scrittura di una sringa su un file txt
 	 * 
 	 * @param file file destinazione su cui scrivere 
 	 * @param testo strina che si vuole scrivere
 	 */
-	public static void scriviFile(File file,String testo)
+	public static void scriviFileTxt(File file,String testo)
 	{
 		try 
 		{
@@ -91,16 +92,65 @@ public class IO
 			e.printStackTrace();
 		} 
 	}
+
+	/**
+	 * Legge i dati presenti in un file txt e li restituisce in output come una stringa
+	 * @param file da cui legge i dati
+	 * @return stringa di dati presenti nel file
+	 */
+	public static String leggiFileTxt(File file)
+	{
+		String str="";
+		try {
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			StringBuffer stringBuffer = new StringBuffer();
+			String line;
+			while ((line = bufferedReader.readLine()) != null) 
+			{
+				stringBuffer.append(line);
+				stringBuffer.append("\n");
+			}
+			fileReader.close();
+			str=stringBuffer.toString();
+
+		} catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return str;
+	}
+	
+	/**
+	 * Elimina tutti i dati presenti su unu file txt
+	 * 
+	 * @param file da svuotare
+	 */
+	public static void svuotaFileTxt(File file)
+	{
+		try 
+		{
+			FileWriter fw = new FileWriter(file.getCanonicalFile(),false);
+			fw.write("");
+			fw.close();
+		} 
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		} 
+	}
 	
 	public static void main(String[] args)
 	{	
 		File f;
 		//IO.outOnFrame("Ciaos");
-		f=IO.apreCreaFile("src/File/test.txt");
-		//File f1=IO.apreCreaFile("src/File/test2.xls");
-		IO.scriviFile(f, "Parte 1 \n");
-		IO.scriviFile(f, "Parte 2 \n");
-		//IO.scriviFile(f, null, true);
+		//f=IO.apreCreaFile("src/File/test.txt");
+		f=IO.apreCreaFile("src/File/test2.xls");
+		IO.svuotaFileTxt(f);
+		IO.scriviFileTxt(f, "P XXX LOL \n");
+		IO.scriviFileTxt(f, "PP \n");
+		IO.out(IO.leggiFileTxt(f));
 	}
 
 }
