@@ -4,7 +4,7 @@ import it.ing.unibs.fondamenti.tools.IO;
 
 public class Main 
 {
-	private static final String ERRMAX="UN GIORNO è STATO SUPERATO IL LIMITE MASSIMO DI "+Settimana.VMAX+"\n";
+	private static final String ERRMAX="IN ALMENO UN GIORNO è STATO SUPERATO IL LIMITE MASSIMO GIORNALIERO DI "+Settimana.VMAX+"\n";
 	private static final String ERRMED="SUPERATO IL LIMITE MEDIO SETTIMANALE DI "+Settimana.VMED+"\n";
 	private static final String AGGGIORNO ="AGGIUNGI I DATI DEL GIORNO ";
 	private static final String SETANNO = "INSERISCI L'ANNO ";
