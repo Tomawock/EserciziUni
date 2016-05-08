@@ -9,6 +9,8 @@ public class Mazzo
 {
 	public static final String[] FR_SEGNO={"Quadri","Cuori","Fiori","Picche"};
 	public static final String[] FR_NOME={"Asso","Due","Tre","Quattro","Cinque","Sei","Sette","Otto","Nove","Dieci","Fante","Donna","Re"};
+	public static final String[] IT_SEGNO={"Bastoni","Coppe","Ori","Spade"};
+	public static final String[] IT_NOME={"Asso","Due","Tre","Quattro","Cinque","Sei","Sette","Otto","Nove","Dieci","Fante","Cavallo","Re"};
 	
 	private ArrayList<Carta> carte;
 	
@@ -36,7 +38,13 @@ public class Mazzo
 	
 	private void creaMazzoIT()
 	{
-		// TODO Auto-generated method stub
+		for(int i=0;i<Mazzo.IT_SEGNO.length;i++)
+		{
+			for(int j=0;j<Mazzo.IT_NOME.length;j++)
+			{
+				carte.add(new Carta(Mazzo.IT_NOME[j],Mazzo.IT_SEGNO[i]));
+			}
+		}
 		
 	}
 
@@ -54,6 +62,11 @@ public class Mazzo
 		{
 			IO.out(carte.get(i).toString()+"\n");
 		}
+	}
+	
+	public int carteRimanenti()
+	{
+		return carte.size();
 	}
 	
 	public static void main(String[] args)

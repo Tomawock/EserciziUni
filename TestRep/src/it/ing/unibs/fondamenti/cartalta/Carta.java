@@ -1,7 +1,5 @@
 package it.ing.unibs.fondamenti.cartalta;
 
-import it.ing.unibs.fondamenti.tools.IO;
-
 public class Carta 
 {
 	private String nomeCarta;
@@ -55,12 +53,10 @@ public class Carta
 		}
 	}
 	
-	
-
 	@Override
 	public String toString()
 	{
-		return nomeCarta + " segno=" + segno + " punteggio=" + punteggio;
+		return "Nome:"+nomeCarta + segno + " punteggio=" + punteggio;
 	}
 
 	public String getNomeCarta() {
