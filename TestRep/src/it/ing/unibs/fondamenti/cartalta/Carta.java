@@ -24,7 +24,7 @@ public class Carta
 	{
 		for(int i=0;i<Mazzo.FR_NOME.length;i++)
 		{
-			if(nomeCarta.equalsIgnoreCase(Mazzo.FR_NOME[i]))
+			if(nomeCarta.equalsIgnoreCase(Mazzo.FR_NOME[i])||nomeCarta.equalsIgnoreCase(Mazzo.IT_NOME[i]))
 			{
 				switch(i)
 				{

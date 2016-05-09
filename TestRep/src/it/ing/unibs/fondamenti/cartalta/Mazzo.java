@@ -8,7 +8,7 @@ import it.ing.unibs.fondamenti.tools.myMath;
 public class Mazzo 
 {
 	public static final String[] FR_SEGNO={"Quadri","Cuori","Fiori","Picche"};
-	public static final String[] FR_NOME={"Asso","Due","Tre","Quattro","Cinque","Sei","Sette","Otto","Nove","Dieci","Fante","Donna","Re"};
+	public static final String[] FR_NOME={"Asso","Due","Tre","Quattro","Cinque","Sei","Sette","Otto","Nove","Dieci","Jack","Donna","Re"};
 	public static final String[] IT_SEGNO={"Bastoni","Coppe","Ori","Spade"};
 	public static final String[] IT_NOME={"Asso","Due","Tre","Quattro","Cinque","Sei","Sette","Otto","Nove","Dieci","Fante","Cavallo","Re"};
 	
@@ -56,7 +56,7 @@ public class Mazzo
 		return ret;
 	}
 	
-	public void mostraCarte()
+	public void mostraCarteScreen()
 	{
 		for(int i=0;i<carte.size();i++)
 		{
@@ -69,10 +69,6 @@ public class Mazzo
 		return carte.size();
 	}
 	
-	public static void main(String[] args)
-	{
-		Mazzo m=new Mazzo("");
-		m.mostraCarte();
-	}
+	
 	
 }

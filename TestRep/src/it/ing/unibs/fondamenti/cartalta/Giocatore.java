@@ -5,6 +5,13 @@ public class Giocatore
 	private int soldi;
 	private int puntata;
 
+	
+	public Giocatore() 
+	{
+		soldi=0;
+		puntata=0;
+	}
+
 	public Giocatore(int soldi)
 	{
 		this.soldi = soldi;
@@ -21,6 +28,11 @@ public class Giocatore
 		this.soldi-=puntata;
 	}
 	
+	public void addSoldi(int soldi)
+	{
+		this.soldi+=soldi;
+	}
+	
 	public boolean punta(int puntata)
 	{
 		if(puntata>soldi)
@@ -28,4 +40,12 @@ public class Giocatore
 		soldi-=puntata;
 		return true;
 	}
+
+	public int getPuntata() {
+		return puntata;
+	}
+
+	public int getSoldi() {
+		return soldi;
+	}	
 }
