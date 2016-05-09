@@ -21,11 +21,13 @@ public class Giocatore
 	public void addVittoria()
 	{
 		this.soldi+=puntata;
+		puntata=0;
 	}
 	
 	public void remVittoria()
 	{
 		this.soldi-=puntata;
+		puntata=0;
 	}
 	
 	public void addSoldi(int soldi)
@@ -36,8 +38,10 @@ public class Giocatore
 	public boolean punta(int puntata)
 	{
 		if(puntata>soldi)
+		{
 			return false;
-		soldi-=puntata;
+		}
+		this.puntata=puntata;
 		return true;
 	}
 

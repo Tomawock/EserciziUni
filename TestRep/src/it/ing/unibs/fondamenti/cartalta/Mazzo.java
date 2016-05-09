@@ -50,7 +50,7 @@ public class Mazzo
 
 	public Carta scarta()
 	{
-		int rand=myMath.randInt(0, 51);
+		int rand=myMath.randInt(0, carte.size()-1);
 		Carta ret=new Carta(carte.get(rand));
 		carte.remove(rand);
 		return ret;
