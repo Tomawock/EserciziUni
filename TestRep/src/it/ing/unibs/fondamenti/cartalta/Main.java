@@ -35,16 +35,16 @@ public class Main
 	
 	public static void loop(Giocatore ply)
 	{
+		String test=null;
+		do
+		{	
+			IO.out(SCELTA);
+			test=IO.inKeyBoard(true);
+		}while(!(test.equalsIgnoreCase(SCELTA_FR)||test.equalsIgnoreCase(SCELTA_IT)));
+		//si crea il mazzo
+		Mazzo mazzo=new Mazzo(test);
 		do
 		{
-			String test=null;
-			do
-			{	
-				IO.out(SCELTA);
-				test=IO.inKeyBoard(true);
-			}while(!(test.equalsIgnoreCase(SCELTA_FR)||test.equalsIgnoreCase(SCELTA_IT)));
-			//si crea il mazzo
-			Mazzo mazzo=new Mazzo(test);
 			//scarta una carta e la carica 
 			Carta prima=new Carta(mazzo.scarta());
 			IO.out(ESTRATTA+prima.toString());
@@ -54,6 +54,7 @@ public class Main
 			}while(!(ply.punta(Integer.parseInt(IO.inKeyBoard(true)))));
 			//CONTROLLA CHI VINCE
 			Carta seconda=new Carta(mazzo.scarta());
+			IO.out(seconda.toString());
 			if(prima.getPunteggio()>=seconda.getPunteggio())//perde se ha la carta con pari punti del banco
 			{
 				IO.out(PERSO+ply.getPuntata());
