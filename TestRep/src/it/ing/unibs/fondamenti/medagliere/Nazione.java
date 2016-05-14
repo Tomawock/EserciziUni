@@ -1,9 +1,5 @@
 package it.ing.unibs.fondamenti.medagliere;
 
-import java.util.ArrayList;
-
-import it.ing.unibs.fondamenti.tools.IO;
-
 public class Nazione implements Comparable<Nazione>
 {
 	private String nome;
@@ -47,10 +43,8 @@ public class Nazione implements Comparable<Nazione>
 	{
 		return bronzi;
 	}
-	
-	
-	@Override
 
+	@Override
 	public int compareTo(Nazione n) 
 	{
 		if(this.ori>n.getOri())
@@ -91,24 +85,4 @@ public class Nazione implements Comparable<Nazione>
 	public String toString() {
 		return "Nazione "+nome + ", ori=" + ori + ", argenti=" + argenti + ", bronzi=" + bronzi + "\n";
 	}
-	/*
-	public static void main (String args[])
-	{
-		Nazione n1=new Nazione("Fr");
-			n1.addOro();
-		Nazione n2=new Nazione("it");
-			n2.addArgento();
-		Nazione n3=new Nazione("sw");
-			n3.addBronzo();
-		ArrayList<Nazione> n=new ArrayList<>();
-		n.add(n1);
-		n.add(n2);
-		n.add(n3);
-		n.sort(null);
-		for(int i=0;i<n.size();i++)
-		{
-			IO.out(n.get(i).toString());
-		}
-	}*/
-
 }

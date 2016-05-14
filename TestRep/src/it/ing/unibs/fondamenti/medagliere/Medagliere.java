@@ -1,9 +1,6 @@
 package it.ing.unibs.fondamenti.medagliere;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-
-import it.ing.unibs.fondamenti.tools.IO;
 
 public class Medagliere 
 {
@@ -24,7 +21,6 @@ public class Medagliere
 		nazioni.sort(null);
 		return nazioni;
 	}
-	
 	
 	@Override
 	public String toString()
