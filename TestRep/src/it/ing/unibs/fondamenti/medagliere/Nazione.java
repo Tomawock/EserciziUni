@@ -1,6 +1,10 @@
 package it.ing.unibs.fondamenti.medagliere;
 
-public class Nazione implements Comparable
+import java.util.ArrayList;
+
+import it.ing.unibs.fondamenti.tools.IO;
+
+public class Nazione implements Comparable<Nazione>
 {
 	private String nome;
 	private int ori;
@@ -44,37 +48,37 @@ public class Nazione implements Comparable
 		return bronzi;
 	}
 	
+	
 	@Override
-	public int compareTo(Object o) 
+	public int compareTo(Nazione n) 
 	{
-		Nazione n=(Nazione)o;
 		if(this.ori>n.getOri())
 		{
-			return 1;
+			return -1;
 		}
 		else if(this.ori<n.getOri())
 		{
-			return -1;
+			return 1;
 		}
 		else
 		{
 			if(this.argenti>n.getArgenti())
 			{
-				return 1;
+				return -1;
 			}
 			else if(this.argenti<n.getArgenti())
 			{
-				return -1;
+				return 1;
 			}
 			else
 			{
 				if(this.bronzi>n.getBronzi())
 				{
-					return 1;
+					return -1;
 				}
 				else if(this.bronzi<n.getBronzi())
 				{
-					return -1;
+					return 1;
 				}
 			}
 			
@@ -82,4 +86,27 @@ public class Nazione implements Comparable
 		return 0;
 	}
 	
+	@Override
+	public String toString() {
+		return "Nazione "+nome + ", ori=" + ori + ", argenti=" + argenti + ", bronzi=" + bronzi + "\n";
+	}
+	public static void main (String args[])
+	{
+		Nazione n1=new Nazione("Fr");
+			n1.addOro();
+		Nazione n2=new Nazione("it");
+			n2.addArgento();
+		Nazione n3=new Nazione("sw");
+			n3.addBronzo();
+		ArrayList<Nazione> n=new ArrayList<>();
+		n.add(n1);
+		n.add(n2);
+		n.add(n3);
+		n.sort(null);
+		for(int i=0;i<n.size();i++)
+		{
+			IO.out(n.get(i).toString());
+		}
+	}
+
 }
