@@ -90,6 +90,7 @@ public class Nazione implements Comparable<Nazione>
 	public String toString() {
 		return "Nazione "+nome + ", ori=" + ori + ", argenti=" + argenti + ", bronzi=" + bronzi + "\n";
 	}
+	/*
 	public static void main (String args[])
 	{
 		Nazione n1=new Nazione("Fr");
@@ -107,6 +108,6 @@ public class Nazione implements Comparable<Nazione>
 		{
 			IO.out(n.get(i).toString());
 		}
-	}
+	}*/
 
 }

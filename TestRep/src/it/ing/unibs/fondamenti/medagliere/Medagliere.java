@@ -19,11 +19,7 @@ public class Medagliere
 	
 	public ArrayList<Nazione> medagliereOrdinato()
 	{
-		Nazione n=new Nazione("");
-		nazioni.sort((Comparator<Nazione>) n);
+		nazioni.sort(null);
 		return nazioni;
 	}
-
-	
-	
 }
