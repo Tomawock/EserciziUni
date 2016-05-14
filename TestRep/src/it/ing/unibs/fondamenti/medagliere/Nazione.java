@@ -1,16 +1,10 @@
 package it.ing.unibs.fondamenti.medagliere;
 
-<<<<<<< HEAD
-import java.util.Comparator;
-
-public class Nazione implements Comparable
-=======
 import java.util.ArrayList;
 
 import it.ing.unibs.fondamenti.tools.IO;
 
 public class Nazione implements Comparable<Nazione>
->>>>>>> origin/master
 {
 	private String nome;
 	private int ori;
@@ -56,11 +50,8 @@ public class Nazione implements Comparable<Nazione>
 	
 	
 	@Override
-<<<<<<< HEAD
-	public int compareTo(Nazione o) 
-=======
+
 	public int compareTo(Nazione n) 
->>>>>>> origin/master
 	{
 		if(this.ori>n.getOri())
 		{
@@ -95,11 +86,6 @@ public class Nazione implements Comparable<Nazione>
 		}
 		return 0;
 	}
-	@Override
-	public String toString() {
-		return "Nazione [nome=" + nome + ", ori=" + ori + ", argenti=" + argenti + ", bronzi=" + bronzi + "]";
-	}
-	
 	
 	@Override
 	public String toString() {
