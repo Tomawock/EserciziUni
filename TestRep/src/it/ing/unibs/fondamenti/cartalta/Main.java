@@ -66,7 +66,12 @@ public class Main
 				ply.addVittoria();
 			}
 			IO.out(STATUS_SOLDI+ply.getSoldi());
-			IO.out(CASE);
+			if(ply.getSoldi()<=0)
+			{
+				IO.out(EXIT);
+			}
+			else
+				IO.out(CASE);
 		}while(!(IO.inKeyBoard(true).equalsIgnoreCase(CASE_EXIT)||ply.getSoldi()<=0));
 		IO.out(EXIT);
 	}

@@ -21,6 +21,7 @@ public class Medagliere
 	
 	public ArrayList<Nazione> medagliereOrdinato()
 	{
+<<<<<<< HEAD
 		Nazione n=new Nazione("");
 		nazioni.sort((Comparator<? super Nazione>) n);
 		return nazioni;
@@ -53,4 +54,9 @@ public class Medagliere
 		m.medagliereOrdinato();
 		IO.out(m.toString());
 	}
+=======
+		nazioni.sort(null);
+		return nazioni;
+	}
+>>>>>>> origin/master
 }
